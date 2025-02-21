@@ -106,6 +106,7 @@ ul {
   width: 14px;
   margin-top: 1rem;
   filter: brightness(60%);
+  padding: 0px 5px;
 }
 
 .playerControls a:hover {
@@ -139,6 +140,7 @@ ul {
   font-size: 12px;
   opacity: 0.3;
   text-decoration: none;
+  padding: 0px 10px;
 }
 
 .mainLinks a:hover {
@@ -169,4 +171,5 @@ ul {
 
 .mainPage img {
   width: 200px;
+  margin-inline: auto;
 }

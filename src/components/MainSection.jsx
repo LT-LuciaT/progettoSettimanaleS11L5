@@ -1,20 +1,20 @@
 import "../App.css";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 const MainSection = () => {
   return (
-    <Col className="col-12 col-md-9 offset-md-3 mainPage">
-      <div className="row">
-        <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
+    <Col className=" mainPage d-flex" xs={12} md={{ span: 6, offset: 3 }}>
+      <Row>
+        <Col xs={9} lg={11} className=" mainLinks d-none d-md- mx-auto">
           <a href="#">TRENDING</a>
           <a href="#">PODCAST</a>
           <a href="#">MOODS AND GENRES</a>
           <a href="#">NEW RELEASES</a>
           <a href="#">DISCOVER</a>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-10">
+        </Col>
+      </Row>
+      <Row className="row">
+        <Col xs={10}>
           <div id="rock">
             <h2>Rock classNameics</h2>
             <div
@@ -22,10 +22,10 @@ const MainSection = () => {
               id="rockSection"
             ></div>
           </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-10">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={10}>
           <div id="pop">
             <h2>Pop Culture</h2>
             <div
@@ -33,10 +33,10 @@ const MainSection = () => {
               id="popSection"
             ></div>
           </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-10">
+        </Col>
+      </Row>
+      <Row className="row">
+        <Col xs={10}>
           <div id="hiphop">
             <h2>#HipHop</h2>
             <div
@@ -44,8 +44,8 @@ const MainSection = () => {
               id="hipHopSection"
             ></div>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </Col>
   );
 };

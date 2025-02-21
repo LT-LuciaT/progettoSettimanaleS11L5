@@ -1,16 +1,16 @@
 import "../App.css";
-import { Nav, Button } from "react-bootstrap";
+import { Nav, Button, Col, ToggleButton } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 
 const Mynav = () => {
   return (
-    <aside className="col col-2">
+    <Col xs={2}>
       <Nav className="navbar navbar-expand-md fixed-left justify-content-between" id="sidebar">
         <div className="container flex-column align-items-start">
           <a className="navbar-brand" href="index.html">
             <img src={Logo} alt="Spotify Logo" width="131" height="40" />
           </a>
-          <Button
+          <ToggleButton
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -20,7 +20,7 @@ const Mynav = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </Button>
+          </ToggleButton>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <ul>
@@ -56,7 +56,7 @@ const Mynav = () => {
           <a href="#">Cookie Policy</a> |<a href="#"> Privacy</a>
         </div>
       </Nav>
-    </aside>
+    </Col>
   );
 };
 
