@@ -1,5 +1,5 @@
 import "../App.css";
-import { Nav, Button, Col, ToggleButton } from "react-bootstrap";
+import { Nav, Button, Col } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
@@ -22,7 +22,7 @@ const Mynav = () => {
           <a className="navbar-brand" href="index.html">
             <img src={Logo} alt="Spotify Logo" width="131" height="40" />
           </a>
-          <ToggleButton
+          <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -32,7 +32,7 @@ const Mynav = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </ToggleButton>
+          </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <ul>
@@ -67,7 +67,7 @@ const Mynav = () => {
             </div>
           </div>
         </div>
-        <div className="nav-btn">
+        <div className="nav-btn flex-column">
           <Button className="btn signup-btn" type="button">
             Sign Up
           </Button>
