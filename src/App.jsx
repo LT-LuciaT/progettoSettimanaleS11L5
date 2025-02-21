@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Mynav />
-      <MainSection />
+      <div>
+        <MainSection />
+      </div>
       <Player />
     </>
   );
