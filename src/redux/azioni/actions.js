@@ -28,3 +28,19 @@ export const fetchMusic = (artistName, genre) => {
     }
   };
 };
+
+export const searchMusic = (query) => {
+  return async (dispatch) => {
+    dispatch({ type: "FETCH_MUSIC_REQUEST" });
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      dispatch({ type: "SEARCH_MUSIC_SUCCESS", payload: data.data });
+    } catch (error) {
+      dispatch({ type: "FETCH_MUSIC_FAILURE", payload: error.message });
+    }
+  };
+};

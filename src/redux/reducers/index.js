@@ -2,6 +2,7 @@ const initialState = {
   rock: [],
   pop: [],
   hipHop: [],
+  searchResults: [],
   loading: false,
   error: null,
   selectedSong: null,
@@ -21,6 +22,8 @@ const musicReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: action.payload };
     case "SET_SELECTED_SONG":
       return { ...state, selectedSong: action.payload };
+    case "SEARCH_MUSIC_SUCCESS":
+      return { ...state, searchResults: action.payload };
     default:
       return state;
   }

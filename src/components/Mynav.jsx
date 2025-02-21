@@ -1,8 +1,20 @@
 import "../App.css";
 import { Nav, Button, Col, ToggleButton } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { searchMusic } from "../redux/azioni/actions";
 
 const Mynav = () => {
+  const [query, setQuery] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      dispatch(searchMusic(query));
+    }
+  };
+
   return (
     <Col xs={2}>
       <Nav className="navbar navbar-expand-md fixed-left justify-content-between" id="sidebar">
@@ -36,9 +48,18 @@ const Mynav = () => {
                 </li>
                 <li>
                   <div className="input-group mt-3">
-                    <input type="text" className="form-control" placeholder="Search" aria-label="Search" />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search"
+                      aria-label="Search"
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                    />
                     <div className="input-group-append">
-                      <button className="btn btn-outline-secondary btn-sm h-100">GO</button>
+                      <button className="btn btn-outline-secondary btn-sm h-100" onClick={handleSearch}>
+                        GO
+                      </button>
                     </div>
                   </div>
                 </li>

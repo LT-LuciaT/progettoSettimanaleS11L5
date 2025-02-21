@@ -7,7 +7,7 @@ import "../App.css";
 
 const MainSection = () => {
   const dispatch = useDispatch();
-  const { rock, pop, hipHop, loading, error } = useSelector((state) => state.music);
+  const { rock, pop, hipHop, searchResults, loading, error } = useSelector((state) => state.music);
 
   useEffect(() => {
     dispatch(fetchMusic("queen", "rock"));
@@ -34,6 +34,23 @@ const MainSection = () => {
           <a href="#">DISCOVER</a>
         </Col>
       </Row>
+      {searchResults && searchResults.length > 0 && (
+        <Row>
+          <Col xs={12}>
+            <div id="search-results">
+              <h2>Search Results</h2>
+              <Row className="row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                {searchResults.map((song, index) => (
+                  <Col key={index}>
+                    <AlbumCard singleSong={song} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      )}
+
       <div>
         <Col xs={12}>
           <div id="rock">
