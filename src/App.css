@@ -94,16 +94,30 @@ ul {
 }
 
 .playerControls div {
-  justify-content: space-between;
+  color: white;
 }
 
+.playerControls h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white !important;
+}
+.playerControls p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: white !important;
+}
+.playerControls .d-flex {
+  gap: 20px;
+}
 .playerControls div:first-of-type {
   margin-left: 10%;
   margin-right: 10%;
 }
 
 .playerControls a img {
-  width: 14px;
+  width: 24px;
+  height: 24px;
   margin-top: 1rem;
   filter: brightness(60%);
   padding: 0px 5px;
@@ -112,6 +126,12 @@ ul {
 .playerControls a:hover {
   filter: brightness(80%);
   color: #282828 !important;
+}
+
+.progress div {
+  background-color: #1db954;
+  height: 100%;
+  width: 0%;
 }
 
 .progress {

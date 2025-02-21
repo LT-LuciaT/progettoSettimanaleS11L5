@@ -8,6 +8,11 @@ export const fetchMusicFailure = (error) => ({
   payload: error,
 });
 
+export const setSelectedSong = (song) => ({
+  type: "SET_SELECTED_SONG",
+  payload: song,
+});
+
 export const fetchMusic = (artistName, genre) => {
   return async (dispatch) => {
     dispatch(fetchMusicRequest());

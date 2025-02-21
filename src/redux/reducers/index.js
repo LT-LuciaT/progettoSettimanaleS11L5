@@ -4,6 +4,7 @@ const initialState = {
   hipHop: [],
   loading: false,
   error: null,
+  selectedSong: null,
 };
 
 const musicReducer = (state = initialState, action) => {
@@ -18,6 +19,8 @@ const musicReducer = (state = initialState, action) => {
       };
     case "FETCH_MUSIC_FAILURE":
       return { ...state, loading: false, error: action.payload };
+    case "SET_SELECTED_SONG":
+      return { ...state, selectedSong: action.payload };
     default:
       return state;
   }
