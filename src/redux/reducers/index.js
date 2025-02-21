@@ -3,6 +3,7 @@ const initialState = {
   pop: [],
   hipHop: [],
   searchResults: [],
+  likedSongs: {},
   loading: false,
   error: null,
   selectedSong: null,
@@ -25,6 +26,14 @@ const musicReducer = (state = initialState, action) => {
     case "SEARCH_MUSIC_SUCCESS":
       console.log("Search Results:", action.payload);
       return { ...state, searchResults: action.payload, loading: false };
+    case "TOGGLE_LIKE":
+      return {
+        ...state,
+        likedSongs: {
+          ...state.likedSongs,
+          [action.payload]: !state.likedSongs[action.payload],
+        },
+      };
     default:
       return state;
   }

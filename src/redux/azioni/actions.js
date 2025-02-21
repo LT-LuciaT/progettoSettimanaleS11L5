@@ -47,3 +47,8 @@ export const searchMusic = (query) => {
     }
   };
 };
+
+export const toggleLike = (songId) => ({
+  type: "TOGGLE_LIKE",
+  payload: songId,
+});
