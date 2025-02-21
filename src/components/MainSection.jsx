@@ -39,13 +39,20 @@ const MainSection = () => {
           <Col xs={12}>
             <div id="search-results">
               <h2>Search Results</h2>
-              <Row className="row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+              <Col
+                xs={1}
+                sm={2}
+                md={3}
+                lg={4}
+                className="g-4"
+                style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+              >
                 {searchResults.map((song, index) => (
                   <Col key={index}>
                     <AlbumCard singleSong={song} />
                   </Col>
                 ))}
-              </Row>
+              </Col>
             </div>
           </Col>
         </Row>

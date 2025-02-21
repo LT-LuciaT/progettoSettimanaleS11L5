@@ -23,7 +23,8 @@ const musicReducer = (state = initialState, action) => {
     case "SET_SELECTED_SONG":
       return { ...state, selectedSong: action.payload };
     case "SEARCH_MUSIC_SUCCESS":
-      return { ...state, searchResults: action.payload };
+      console.log("Search Results:", action.payload);
+      return { ...state, searchResults: action.payload, loading: false };
     default:
       return state;
   }

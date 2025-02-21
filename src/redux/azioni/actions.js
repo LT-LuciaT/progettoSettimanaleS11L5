@@ -38,8 +38,11 @@ export const searchMusic = (query) => {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      dispatch({ type: "SEARCH_MUSIC_SUCCESS", payload: data.data });
+      const firstFourResults = data.data.slice(0, 4);
+      console.log("Primi 4 risultati:", firstFourResults);
+      dispatch({ type: "SEARCH_MUSIC_SUCCESS", payload: firstFourResults });
     } catch (error) {
+      console.error("Errore durante la ricerca:", error);
       dispatch({ type: "FETCH_MUSIC_FAILURE", payload: error.message });
     }
   };
